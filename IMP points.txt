@@ -1,0 +1,2 @@
+1. E-mail sent thto hse to pan nahi batave kem ke gani var SPAM MAIL MA jato rese INBOX NI JAGYAE.
+2. Logout vakhte cart empty na thay e mate resetCart() vado part comment krelo che authAPI.jsx ma....jo cart empty karvi hoy to uncomment it
