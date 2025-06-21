@@ -180,7 +180,7 @@ const Footer = () => {
             ))}
           </div>
           <div className="text-center mt-4 lg:mt-0">
-            Made with ❤️ © {new Date().getFullYear()} Studynotion
+            Made with ❤️ © {new Date().getFullYear()} Premal
           </div>
         </div>
       </div>
