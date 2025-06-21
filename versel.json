@@ -1,0 +1,25 @@
+{
+  "projects": [
+    {
+      "src": "Studynotion",
+      "use": "@vercel/static-build",
+      "config": {
+        "distDir": "dist"
+      }
+    },
+    {
+      "src": "server2",
+      "use": "@vercel/node"
+    }
+  ],
+  "rewrites": [
+    {
+      "source": "/api/(.*)",
+      "destination": "/server2/api/$1"
+    },
+    {
+      "source": "/(.*)",
+      "destination": "/Studynotion/$1"
+    }
+  ]
+}
