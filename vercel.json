@@ -6,11 +6,17 @@
       "use": "@vercel/static-build",
       "config": {
         "distDir": "dist"
+      },
+      "env": {
+        "NODE_ENV": "production"
       }
     },
     {
       "src": "server2/index.js",
-      "use": "@vercel/node"
+      "use": "@vercel/node",
+      "config": {
+        "includeFiles": ["server2/**"]
+      }
     }
   ],
   "routes": [
@@ -22,5 +28,8 @@
       "src": "/(.*)",
       "dest": "/Studynotion/$1"
     }
-  ]
+  ],
+  "env": {
+    "NODE_ENV": "production"
+  }
 } 

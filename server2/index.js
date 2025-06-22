@@ -15,6 +15,12 @@ const fileUpload = require("express-fileupload");
 const dotenv = require("dotenv");
 
 dotenv.config();
+
+// Set NODE_ENV if not already set
+if (!process.env.NODE_ENV) {
+  process.env.NODE_ENV = 'development';
+}
+
 const PORT = process.env.PORT || 4000;
 
 // ⬇️ Connect to your database
@@ -27,8 +33,8 @@ app.use(cookieParser());
 
 // ✅ ⬇️ Add this block here (CORS allowedOrigins)
 const allowedOrigins = [
-  "https://studynotion-studyapp.vercel.app", // production frontend
-  "https://your-vercel-domain.vercel.app",   // your new vercel domain
+  "https://studynotion-edtech-psi.vercel.app", // production frontend
+  "https://studynotion-edtech-psi.vercel.app",   // ⚠️ UPDATE THIS WITH YOUR ACTUAL DOMAIN
   "http://localhost:3000",                   // local development
   "http://localhost:5173",                   // vite dev server
 ];
@@ -70,10 +76,27 @@ app.get("/", (req, res) => {
   return res.json({
     success: true,
     message: "Your server is up and running....",
+    environment: process.env.NODE_ENV,
+    timestamp: new Date().toISOString()
   });
 });
 
-// ⬇️ Start server
-app.listen(PORT, () => {
-  console.log(`App is running at ${PORT}`);
+// ⬇️ Health check route for Vercel
+app.get("/api/health", (req, res) => {
+  return res.json({
+    success: true,
+    message: "Backend is healthy",
+    environment: process.env.NODE_ENV,
+    timestamp: new Date().toISOString()
+  });
 });
+
+// ⬇️ Start server (only in development, Vercel handles this in production)
+if (process.env.NODE_ENV !== 'production') {
+  app.listen(PORT, () => {
+    console.log(`App is running at ${PORT} in ${process.env.NODE_ENV} mode`);
+  });
+}
+
+// Export for Vercel
+module.exports = app;
