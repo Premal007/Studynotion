@@ -31,5 +31,10 @@
   ],
   "env": {
     "NODE_ENV": "production"
+  },
+  "functions": {
+    "server2/index.js": {
+      "maxDuration": 30
+    }
   }
 } 
