@@ -1,0 +1,12 @@
+{
+  "name": "edtech-platform",
+  "version": "1.0.0",
+  "description": "EdTech platform with React frontend and Node.js backend",
+  "scripts": {
+    "build": "cd Studynotion && npm install && npm run build",
+    "start": "cd server2 && npm install && npm start"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+} 

@@ -28,7 +28,9 @@ app.use(cookieParser());
 // ✅ ⬇️ Add this block here (CORS allowedOrigins)
 const allowedOrigins = [
   "https://studynotion-studyapp.vercel.app", // production frontend
+  "https://your-vercel-domain.vercel.app",   // your new vercel domain
   "http://localhost:3000",                   // local development
+  "http://localhost:5173",                   // vite dev server
 ];
 
 app.use(
