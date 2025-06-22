@@ -29,7 +29,7 @@ function Navbar() {
     setLoading(true)
     try {
       const res = await apiConnector("GET", categories.CATEGORIES_API)
-      console.log("response",res);
+      // console.log("response",res);
       
       console.log("printing sublinks data", res.data.data);
       setSubLinks(res.data.data);
@@ -39,7 +39,7 @@ function Navbar() {
     setLoading(false)
   }
 
-  console.log("Sublinks",subLinks);
+  // console.log("Sublinks",subLinks);
   
 
   // Backend ma API call krva mate
