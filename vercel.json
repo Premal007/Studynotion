@@ -14,5 +14,8 @@
       "src": "/(.*)",
       "dest": "/Studynotion/$1"
     }
+  ],
+    "rewrites": [
+    { "source": "/(.*)", "destination": "/" }
   ]
 } 
