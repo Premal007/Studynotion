@@ -35,21 +35,15 @@ app.use(cookieParser());
 const allowedOrigins = [
   "http://localhost:3000",                   // local development
   "http://localhost:5173",                   // vite dev server
-  "https://studynotion-kvnt.vercel.app", // ⚠️ UPDATE with your Render frontend URL
+  process.env.FRONTEND_URL // ⚠️ UPDATE with your Render frontend URL
 ];
 
 app.use(
   cors({
-    origin: function (origin, callback) {
-      if (!origin) return callback(null, true); // allow non-browser tools like curl/Postman
-      if (allowedOrigins.includes(origin)) {
-        return callback(null, true);
-      } else {
-        return callback(new Error("Not allowed by CORS"));
-      }
-    },
-    credentials: true,
-  })
+    origin: allowedOrigins,
+    methods: ["GET","POST","PUT","DELETE"],
+    credentials: true,
+  })
 );
 
 // ⬇️ File upload middleware
