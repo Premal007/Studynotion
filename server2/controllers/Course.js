@@ -26,7 +26,7 @@ exports.createCourse = async (req, res) => {
       instructions: _instructions,
     } = req.body
     // Get thumbnail image from request files
-    const thumbnail = req.files.thumbnailImage
+    const thumbnail = req.files.thumbnail
 
     // Convert the tag and instructions from stringified Array to Array
     const tag = JSON.parse(_tag)
@@ -74,11 +74,19 @@ exports.createCourse = async (req, res) => {
         message: "Category Details Not Found",
       })
     }
+
+    
+
+
     // Upload the Thumbnail to Cloudinary
     const thumbnailImage = await uploadImageToCloudinary(
       thumbnail,
       process.env.FOLDER_NAME
     )
+
+
+
+
     console.log(thumbnailImage)
     // Create a new course with the given details
     const newCourse = await Course.create({
@@ -89,7 +97,7 @@ exports.createCourse = async (req, res) => {
       price,
       tag,
       category: categoryDetails._id,
-      thumbnail: thumbnailImage.secure_url,
+      thumbnail: thumbnail,
       status: status,
       instructions,
     })
