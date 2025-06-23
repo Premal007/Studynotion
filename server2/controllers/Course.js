@@ -48,7 +48,7 @@ exports.createCourse = async (req, res) => {
     ) {
       return res.status(400).json({
         success: false,
-        message: "All Fields are Mandatory",
+        message: "All Fields are Mandatory.......",
       })
     }
     if (!status || status === undefined) {
