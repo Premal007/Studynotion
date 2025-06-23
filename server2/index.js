@@ -31,29 +31,35 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());
 
+
+
+
+
+
 // ✅ ⬇️ Add this block here (CORS allowedOrigins)
-const allowedOrigins = [
-  "http://localhost:3000",                   // local development
-  "http://localhost:5173",                   // vite dev server
-  process.env.FRONTEND_URL // ⚠️ UPDATE with your Render frontend URL
-                   // vite dev server
+
+const allowedOrigins = [                  
+  'https://studynotion-studyplatform.vercel.app', // your deployed frontend
 ];
 
 app.use(
   cors({
-    origin: allowedOrigins,
-    methods: ["GET","POST","PUT","DELETE"],
-    credentials: true,
-  })
-);
-
-// ⬇️ File upload middleware
-app.use(
-  fileUpload({
-    useTempFiles: true,
-    tempFileDir: "/tmp",
+    origin: function (origin, callback) {
+      if (!origin || allowedOrigins.includes(origin)) {
+        callback(null, true); // allow request
+      } else {
+        callback(new Error("Not allowed by CORS"));
+      }
+    },
+    methods: ["GET", "POST", "PUT", "DELETE"],
+    credentials: true, // if using cookies or auth
   })
 );
+
+
+
+
+
 
 // ⬇️ Cloudinary config
 cloudinaryConnect();
