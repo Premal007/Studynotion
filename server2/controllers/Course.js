@@ -24,7 +24,7 @@ exports.createCourse = async (req, res) => {
       instructions: _instructions,
     } = req.body
 
-    console.log("Files received:", req.files)
+    console.log("Files received:", req)
     
     // Check if files were uploaded
     if (!req.files || !req.files.thumbnail) {
@@ -40,6 +40,7 @@ exports.createCourse = async (req, res) => {
 
     // Get thumbnail image from request files
     const thumbnail = req.files.thumbnail
+    
 
     // Convert the tag and instructions from stringified Array to Array
     const tag = JSON.parse(_tag)
@@ -159,9 +160,9 @@ exports.editCourse = async (req, res) => {
     }
 
     // If Thumbnail Image is found, update it
-    if (req.files) {
+    if (req.files && req.files.thumbnail) {
       console.log("thumbnail update")
-      const thumbnail = req.files.thumbnailImage
+      const thumbnail = req.files.thumbnail
       const thumbnailImage = await uploadImageToCloudinary(
         thumbnail,
         process.env.FOLDER_NAME
