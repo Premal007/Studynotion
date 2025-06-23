@@ -36,6 +36,7 @@ const allowedOrigins = [
   "http://localhost:3000",                   // local development
   "http://localhost:5173",                   // vite dev server
   process.env.FRONTEND_URL // ⚠️ UPDATE with your Render frontend URL
+                   // vite dev server
 ];
 
 app.use(
