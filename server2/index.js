@@ -30,11 +30,13 @@ database.connect();
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());
-app.use(fileUpload());
 
-
-
-
+// Add file upload middleware
+app.use(fileUpload({
+  useTempFiles: true,
+  tempFileDir: '/tmp/',
+  createParentPath: true
+}));
 
 // ✅ ⬇️ Add this block here (CORS allowedOrigins)
 
@@ -56,11 +58,6 @@ app.use(
     credentials: true, // if using cookies or auth
   })
 );
-
-
-
-
-
 
 // ⬇️ Cloudinary config
 cloudinaryConnect();

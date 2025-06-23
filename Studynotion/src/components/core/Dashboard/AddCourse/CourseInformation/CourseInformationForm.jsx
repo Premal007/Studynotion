@@ -195,7 +195,7 @@ export default function CourseInformationForm() {
     formData.append("category", data.courseCategory)
     formData.append("status", COURSE_STATUS.DRAFT) //koi use mate status save krvo hoy to
     formData.append("instructions", JSON.stringify(data.courseRequirements))
-    formData.append("thumbnailImage", thumbnail)
+    formData.append("thumbnail", data.courseImage)
 
     setLoading(true)
     const result = await addCourseDetails(formData, token)
