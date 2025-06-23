@@ -35,7 +35,7 @@ app.use(cookieParser());
 const allowedOrigins = [
   "http://localhost:3000",                   // local development
   "http://localhost:5173",                   // vite dev server
-  "https://studynotion-kvnt.vercel.app", // ⚠️ UPDATE with your Render frontend URL
+  "https://studynotion-frontend-s8kb.onrender.com", // ⚠️ UPDATE with your Render frontend URL
 ];
 
 app.use(
