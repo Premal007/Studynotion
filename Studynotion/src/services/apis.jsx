@@ -1,7 +1,7 @@
 // const BASE_URL = "http://localhost:4000/api/v1"
 
 // For production deployment on Vercel
-const BASE_URL = import.meta.env.VITE_API_URL || "/api/v1"
+const BASE_URL = import.meta.env.VITE_API_URL;
 
 //url pachad endpoint add krva mate
 
