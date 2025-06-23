@@ -6,35 +6,13 @@
       "use": "@vercel/static-build",
       "config": {
         "distDir": "dist"
-      },
-      "env": {
-        "NODE_ENV": "production"
-      }
-    },
-    {
-      "src": "server2/index.js",
-      "use": "@vercel/node",
-      "config": {
-        "includeFiles": ["server2/**"]
       }
     }
   ],
   "routes": [
     {
-      "src": "/api/(.*)",
-      "dest": "/server2/index.js"
-    },
-    {
       "src": "/(.*)",
       "dest": "/Studynotion/$1"
     }
-  ],
-  "env": {
-    "NODE_ENV": "production"
-  },
-  "functions": {
-    "server2/index.js": {
-      "maxDuration": 30
-    }
-  }
+  ]
 } 

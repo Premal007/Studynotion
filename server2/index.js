@@ -91,12 +91,7 @@ app.get("/api/health", (req, res) => {
   });
 });
 
-// ⬇️ Start server (only in development, Vercel handles this in production)
-if (process.env.NODE_ENV !== 'production') {
-  app.listen(PORT, () => {
-    console.log(`App is running at ${PORT} in ${process.env.NODE_ENV} mode`);
-  });
-}
-
-// Export for Vercel
-module.exports = app;
+// ⬇️ Start server
+app.listen(PORT, () => {
+  console.log(`App is running at ${PORT}`);
+});
