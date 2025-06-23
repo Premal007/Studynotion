@@ -40,6 +40,7 @@ app.use(cookieParser());
 
 const allowedOrigins = [                  
   'https://studynotion-studyplatform.vercel.app', // your deployed frontend
+  'http://studynotion-studyplatform.vercel.app', // your deployed frontend
 ];
 
 app.use(
