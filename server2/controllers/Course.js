@@ -8,9 +8,9 @@ const CourseProgress = require("../models/CourseProgress")
 const { convertSecondsToDuration } = require("../utils/secToDuration")
 // Function to create a new course
 exports.createCourse = async (req, res) => {
+  const userId = req.user.id;
   try {
     // Get user ID from request object
-    const userId = req.user.id
     console.log("thumbnail image",req.files);
     
 
@@ -26,7 +26,7 @@ exports.createCourse = async (req, res) => {
       instructions: _instructions,
     } = req.body
     // Get thumbnail image from request files
-    const thumbnail = req.files.thumbnailImage
+    const thumbnail = req.files.thumbnail
 
     // Convert the tag and instructions from stringified Array to Array
     const tag = JSON.parse(_tag)
@@ -75,10 +75,10 @@ exports.createCourse = async (req, res) => {
       })
     }
     // Upload the Thumbnail to Cloudinary
-    const thumbnailImage = await uploadImageToCloudinary(
-      thumbnail,
-      process.env.FOLDER_NAME
-    )
+    // const thumbnailImage = await uploadImageToCloudinary(
+    //   thumbnail,
+    //   process.env.FOLDER_NAME
+    // )
     console.log(thumbnailImage)
     // Create a new course with the given details
     const newCourse = await Course.create({
@@ -89,7 +89,7 @@ exports.createCourse = async (req, res) => {
       price,
       tag,
       category: categoryDetails._id,
-      thumbnail: thumbnailImage.secure_url,
+      thumbnail: thumbnail,
       status: status,
       instructions,
     })

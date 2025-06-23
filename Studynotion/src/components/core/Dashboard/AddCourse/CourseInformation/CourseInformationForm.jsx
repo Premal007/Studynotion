@@ -140,7 +140,41 @@ export default function CourseInformationForm() {
         toast.error("No changes made to the form")
       }
       return
+    };
+
+
+
+
+
+    const uploadImageToCloudinary = async (imageFile) => {
+      const formData = new FormData()
+      formData.append("file", imageFile)
+      formData.append("upload_preset", "studynotion") // replace
+      formData.append("cloud_name", "ddmi6rdhy") // optional
+    
+      try {
+        const res = await fetch(`https://api.cloudinary.com/v1_1/<your_cloud_name>/image/upload`, {
+          method: "POST",
+          body: formData,
+        })
+        const data = await res.json()
+        return data.secure_url
+      } catch (err) {
+        console.error("Cloudinary Upload Error", err)
+        return null
+      }
     }
+      // 1. Upload image to cloudinary
+      const thumbnailURL = await uploadImageToCloudinary(data.courseImage)
+      if (!thumbnailURL) {
+        toast.error("Image upload failed")
+        setLoading(false)
+        return
+      }
+
+
+
+
 
     //edit krva nhi normal add krva avya chie to...
     const formData = new FormData()
@@ -152,7 +186,7 @@ export default function CourseInformationForm() {
     formData.append("category", data.courseCategory)
     formData.append("status", COURSE_STATUS.DRAFT) //koi use mate status save krvo hoy to
     formData.append("instructions", JSON.stringify(data.courseRequirements))
-    formData.append("thumbnailImage", data.courseImage)
+    formData.append("thumbnailImage", thumbnailURL)
 
     setLoading(true)
     const result = await addCourseDetails(formData, token)
