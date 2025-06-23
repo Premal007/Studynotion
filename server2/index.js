@@ -33,8 +33,7 @@ app.use(cookieParser());
 
 // ✅ ⬇️ Add this block here (CORS allowedOrigins)
 const allowedOrigins = [
-  "http://localhost:3000",                   // local development
-  "http://localhost:5173",                   // vite dev server
+                   // vite dev server
   process.env.FRONTEND_URL, // ⚠️ UPDATE with your Render frontend URL
 ];
 
