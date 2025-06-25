@@ -42,7 +42,7 @@ app.use(fileUpload({
 
 const allowedOrigins = [                  
   'https://studynotion-studyplatform.vercel.app', // your deployed frontend
-  'http://studynotion-studyplatform.vercel.app', // your deployed frontend
+  'https://studynotion-nine-ruby.vercel.app', // your deployed frontend
   'http://localhost:5173', // local development
   'http://localhost:3000', // alternative local port
 ];
