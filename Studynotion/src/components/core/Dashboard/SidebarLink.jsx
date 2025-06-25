@@ -44,7 +44,7 @@ import { useDispatch, useSelector } from "react-redux"
 import { NavLink, matchPath, useLocation } from "react-router-dom"
 
 import { resetCourseState } from "../../../slices/courseSlice"
-import { setOpenSideMenu } from "../../../slices/SidebarSlice"
+import { setOpenSideMenu } from "../../../slices/sidebarSlice"
 
 
 export default function SidebarLink({ link, iconName }) {
