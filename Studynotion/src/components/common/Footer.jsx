@@ -60,9 +60,9 @@ const Footer = () => {
                   { icon: <FaFacebook />, link: "https://www.facebook.com" },
                   { icon: <FaGoogle />, link: "https://projects.100xdevs.com" },
                   { icon: <FaXTwitter />, link: "https://www.twitter.com" },
-                  { icon: <FaYoutube />, link: "https://www.youtube.com" },
-                  { icon: <FaLinkedin />, link: "https://www.linkedin.com" },
-                  { icon: <FaInstagram />, link: "https://www.instagram.com" },
+                  { icon: <FaYoutube />, link: "https://www.youtube.com/@premalpatel1762" },
+                  { icon: <FaLinkedin />, link: "https://www.linkedin.com/in/premal-patel-b67448296" },
+                  { icon: <FaInstagram />, link: "https://www.instagram.com/premalpatel_007" },
                 ].map(({ icon, link }, i) => (
                   <a
                     key={i}
@@ -180,7 +180,7 @@ const Footer = () => {
             ))}
           </div>
           <div className="text-center mt-4 lg:mt-0">
-            Made with ❤️ © {new Date().getFullYear()} Premal
+            Made with ❤️ © {new Date().getFullYear()} Premal Patel
           </div>
         </div>
       </div>
