@@ -16,7 +16,7 @@ exports.createCategory = async (req, res) => {
 			name: name,
 			description: description,
 		});
-		console.log(CategorysDetails);
+		// console.log(CategorysDetails);
 		return res.status(200).json({
 			success: true,
 			message: "Categorys Created Successfully",
@@ -81,7 +81,7 @@ exports.showAllCategories = async (req, res) => {
 exports.categoryPageDetails = async (req, res) => {
     try {
       const { categoryId } = req.body
-      console.log("PRINTING CATEGORY ID: ", categoryId);
+      // console.log("PRINTING CATEGORY ID: ", categoryId);
       // Get courses for the specified category
       const selectedCategory = await Category.findById(categoryId)
         .populate({
