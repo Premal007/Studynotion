@@ -41,7 +41,7 @@ app.use(fileUpload({
 // ✅ ⬇️ Add this block here (CORS allowedOrigins)
 
 const allowedOrigins = [                  
-  'https://studynotionstudyplatform.vercel.app', // your deployed frontend
+  'https://studynotion-7zqv.vercel.app', // your deployed frontend
   'https://studynotion-nine-ruby.vercel.app', // your deployed frontend
   'http://localhost:5173', // local development
   'http://localhost:3000', // alternative local port
