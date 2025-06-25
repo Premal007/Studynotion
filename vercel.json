@@ -9,13 +9,10 @@
       }
     }
   ],
-  "routes": [
+  "rewrites": [
     {
-      "src": "/(.*)",
-      "dest": "/Studynotion/$1"
+      "source": "/(.*)",
+      "destination": "/Studynotion/index.html"
     }
-  ],
-    "rewrites": [
-    { "source": "/(.*)", "destination": "/" }
   ]
 } 
