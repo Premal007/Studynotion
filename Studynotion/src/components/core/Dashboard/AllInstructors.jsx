@@ -50,7 +50,7 @@ function AllInstructors() {
       }
       setLoading(false)
     };
-    console.log("INSTRUCTOR DETAILS ARE HERE",allInstructorDetails);
+    // console.log("INSTRUCTOR DETAILS ARE HERE",allInstructorDetails);
     
     fetchInstructorsData();
     }, []);

@@ -11,7 +11,7 @@ export async function getAllStudentsData(token) {
         const response = await apiConnector("GET", GET_ALL_STUDENTS_DATA_API, null, {
             Authorization: `Bearer ${token}`,
         })
-        console.log("GET_ALL_STUDENTS_DATA_API RESPONSE............", response)
+        // console.log("GET_ALL_STUDENTS_DATA_API RESPONSE............", response)
         result = response?.data
     } catch (error) {
         console.log("GET_ALL_STUDENTS_DATA_API ERROR............", error)
@@ -29,7 +29,7 @@ export async function getAllInstructorDetails(token) {
         const response = await apiConnector("GET", GET_ALL_INSTRUCTORS_DATA_API, null, {
             Authorization: `Bearer ${token}`,
         })
-        console.log("GET_ALL_INSTRUCTORS_DATA_API RESPONSE............", response)
+        // console.log("GET_ALL_INSTRUCTORS_DATA_API RESPONSE............", response)
         result = response?.data
     } catch (error) {
         console.log("GET_ALL_INSTRUCTORS_DATA_API ERROR............", error)

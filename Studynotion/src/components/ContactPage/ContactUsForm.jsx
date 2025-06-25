@@ -15,7 +15,7 @@ const ContactUsForm = () => {
   } = useForm()    // atlo data useForm hook ni andar thi madej use krva mate...
 
   const submitContactForm = async (data) => {
-    console.log("Form Data - ", data)
+    // console.log("Form Data - ", data)
     try {
       setLoading(true)
       const res = await apiConnector(
@@ -26,7 +26,7 @@ const ContactUsForm = () => {
       // console.log("Email Res - ", res)
       setLoading(false)
     } catch (error) {
-      console.log("ERROR MESSAGE - ", error.message)
+      // console.log("ERROR MESSAGE - ", error.message)
       setLoading(false)
     }
   }
