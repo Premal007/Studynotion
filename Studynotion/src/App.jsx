@@ -35,7 +35,7 @@ import Loading from "./components/common/Loading";
 import Error from "./pages/Error";
 
 import Project from "./pages/Project";
-import Chatbot from "./pages/Chatbot";
+// import Chatbot from "./pages/Chatbot";
 import Contact from "./pages/Contact";
 
 import CreateCategory from "./components/core/Dashboard/CreateCategory";
