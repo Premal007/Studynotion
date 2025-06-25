@@ -140,6 +140,7 @@ The **backend** of StudyNotion is a monolithic Node.js application built using *
 
 ---
 ## Models And Schema
+![Screenshot 2025-06-25 230207](https://github.com/user-attachments/assets/dfdeff95-ec7e-4775-a565-a49e807c116f)
 
 
 ---
