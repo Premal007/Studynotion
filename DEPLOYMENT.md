@@ -57,3 +57,29 @@ For issues, check:
 2. Browser developer console
 3. Network tab for API calls
 4. Database connection status 
+
+
+
+
+
+{
+  "version": 2,
+  "builds": [
+    {
+      "src": "Studynotion/package.json",
+      "use": "@vercel/static-build",
+      "config": {
+        "distDir": "dist"
+      }
+    }
+  ],
+  "routes": [
+    {
+      "src": "/(.*)",
+      "dest": "/Studynotion/$1"
+    }
+  ],
+    "rewrites": [
+    { "source": "/(.*)", "destination": "/" }
+  ]
+} 
