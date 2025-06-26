@@ -2,7 +2,7 @@
 
 Welcome to **StudyNotion**, a full-stack EdTech web application built to offer a seamless learning experience for both students and instructors. This platform allows users to create, manage, and enroll in online courses with a modern and responsive UI.
 
-🔗 **Live Demo:** [studynotion-studyplatform.vercel.app](https://studynotion-studyplatform.vercel.app/)
+🔗 **Live Demo:** [studynotion-studyplatform.vercel.app](https://studynotion-7zqv.vercel.app)
 
 ## 🚀 Features
 
